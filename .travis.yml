@@ -11,6 +11,6 @@ jobs:
     - stage: warmup
       env:
         - WARMUPPKGS='checkmate backports'
-      install: Rscript -e 'install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS", " "))[[1]]))'
+      install: Rscript -e 'install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]))'
       script: true
     - stage: check
