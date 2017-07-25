@@ -4,13 +4,13 @@ dist: trusty
 language: R
 sudo: false
 cache: packages
-
-env:
-  - WARMUPPKGS='checkmate backports'
+latex: false
 
 jobs:
   include:
     - stage: warmup
+      env:
+        - WARMUPPKGS='checkmate backports'
       install: Rscript -e 'install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS", " "))[[1]]))'
       script: true
     - stage: check
