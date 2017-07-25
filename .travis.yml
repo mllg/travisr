@@ -3,3 +3,9 @@
 language: R
 sudo: false
 cache: packages
+
+jobs:
+  include:
+    - stage: warmup
+      script: Rscript -e 'install.packages("checkmate")'
+    - stage: check
