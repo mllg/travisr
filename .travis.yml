@@ -12,6 +12,6 @@ jobs:
       env:
         - WARMUPPKGS='checkmate backports'
       install: 
-        - Rscript -e 'pkgs = trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]); pkgs = pkgs[!pkgs %in% installed.packages()]; if (length(pkgs) > 0) install.packages(pkgs, repos = "https://cloud.r-project.org"])'
+        - Rscript -e 'pkgs = trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]); pkgs = pkgs[!pkgs %in% installed.packages()]; if (length(pkgs) > 0) install.packages(pkgs, repos = "https://cloud.r-project.org")'
       script: true
     - stage: check
