@@ -4,6 +4,7 @@ Title: Test staged builds
 Version: 1.0
 Author: Who wrote it
 Maintainer: Michel Lang <michellang@gmail.com>
-Description: More about what it does (maybe more than one line)
+Description: More about what it does (maybe more than one line).
 License: GPL-2
 Imports: backports
+Suggests: testthat
