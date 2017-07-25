@@ -5,8 +5,12 @@ language: R
 sudo: false
 cache: packages
 
+env:
+  - WARMUPPKGS='checkmate backports'
+
 jobs:
   include:
     - stage: warmup
-      script: Rscript -e 'install.packages("checkmate")'
+      install: Rscript -e 'install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS", " "))[[1]]))'
+      script: true
     - stage: check
